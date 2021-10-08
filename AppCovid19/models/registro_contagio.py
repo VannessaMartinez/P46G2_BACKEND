@@ -1,9 +1,10 @@
 from django.db import models
-from .ubicacion_geografica import Ubicacion_geografica
+from .ubicacion import Ubicacion
 
-class Registro_contagio(models.Model):
+
+class Registro(models.Model):
     id_caso                        = models.BigAutoField(primary_key=True)
-    codigo_divipola_municipio_fk   = models.ForeignKey(Ubicacion_geografica, related_name='codigo_divipola_municipio', on_delete=models.CASCADE)
+    codigo_divipola_municipio_fk   = models.ForeignKey(Ubicacion, null=False, blank=False,  on_delete=models.CASCADE)
     fecha_notificacion             = models.DateTimeField()
     fecha_reporte                  = models.DateTimeField()
     fecha_sintomas                 = models.DateTimeField()
