@@ -17,8 +17,10 @@ from django.contrib import admin
 from django.urls import path
 from django.http import HttpResponse
 from AppCovid19.views.CRUDView import consultar_registros_view
-
+from AppCovid19.views.CRUDView import UnRegistroidUbicacion
+from AppCovid19.views.CRUDView import MostarTodasUbicaciones
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('consultar-registros/', consultar_registros_view, name='consultar'),
+    path('consultarUnaUbicacion/<int:codigo_mun>/', UnRegistroidUbicacion.as_view()),
+    path('consultarTodasUbicaciones/', MostarTodasUbicaciones.as_view()),
 ]

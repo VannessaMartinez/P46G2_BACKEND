@@ -7,7 +7,7 @@ class UbicacionSerializer(serializers.ModelSerializer):
         fields = ['codigoDivipolaMunicipio', 'codigo_iso_pais', 'nombre_pais', 'codigo_divipola_departamento', 'nombre_departamento', 'nombre_municipio']           
     
     def to_representation(self, obj):
-        ubicacion = Ubicacion.objects.get(id=obj.codigoDivipolaMunicipio)
+        ubicacion = Ubicacion.objects.get(codigoDivipolaMunicipio=obj.codigoDivipolaMunicipio)
         return {
             'codigoDivipolaMunicipio'       : ubicacion.codigoDivipolaMunicipio,
             'codigo_iso_pais'               : ubicacion.codigo_iso_pais,
