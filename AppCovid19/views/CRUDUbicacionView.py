@@ -40,3 +40,10 @@ class CrearUbicacion(generics.CreateAPIView):    #Crear un registro
         serializer.save()                                                          #guarda al transacción en la bd
 
         return Response("Transacción exitosa", status=status.HTTP_201_CREATED)     #devuelve msj de transacción exitosa
+
+class ActualizarUbicacion(generics.UpdateAPIView):                                 #Actualizar un registro
+    serializer_class   = UbicacionSerializer
+    queryset           = Ubicacion.objects.all()
+
+    def update(self, request, *args, **kwargs):     
+        return super().update(request, *args, **kwargs)                            #con esta línea se actualiza el registro
