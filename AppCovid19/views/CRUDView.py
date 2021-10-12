@@ -31,3 +31,12 @@ class MostarTodasUbicaciones(generics.ListAPIView):
         queryset = Ubicacion.objects.all()     #De todas las transacciones, filtra aquellas con cuenta origen = "account" que viene en la url
         return queryset
 
+class CrearUbicacion(generics.CreateAPIView):    #Crear un registro
+    serializer_class   = UbicacionSerializer
+    def post(self, request, *args, **kwargs):                                      #request: viene en el body del post. Se obtiene info con request.data[nombre de la llave]
+            
+        serializer = UbicacionSerializer(data=request.data)                        #pasamos del json que recibimos al objeto de tipo transacción
+        serializer.is_valid(raise_exception=True)                                  #verificar si es valido
+        serializer.save()                                                          #guarda al transacción en la bd
+
+        return Response("Transacción exitosa", status=status.HTTP_201_CREATED)     #devuelve msj de transacción exitosa
