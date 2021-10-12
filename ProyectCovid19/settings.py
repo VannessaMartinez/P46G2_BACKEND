@@ -102,7 +102,7 @@ DATABASES = {
         'ENGINE'    : 'django.db.backends.postgresql_psycopg2',
         'NAME'      : 'coronactual',
         'USER'      : 'postgres',
-        'PASSWORD'  : 'toor12345',
+        'PASSWORD'  : 'ADMIN1234',
         'HOST'      : 'localhost',
         'PORT'      : '5432',
     }
