@@ -11,7 +11,7 @@ class RegistroSerializer(serializers.ModelSerializer):
     
     def to_representation(self, obj):
         seguimiento_cambios = Seguimiento_de_cambios.objects.get(id=obj.id_evolucion)
-        ubicacion = Ubicacion.objects.get(id=obj.codigoDivipolaMunicipio)
+        ubicacion = Ubicacion.objects.get(id=obj.codigoDivipolaMunicipio_fk_id)
         registro = Registro.objects.get(id=obj.id_caso)
         return {
             'id_caso'                           :registro.id_caso,

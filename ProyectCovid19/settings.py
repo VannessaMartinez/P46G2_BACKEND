@@ -66,11 +66,13 @@ MIDDLEWARE = [
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
-        'REST_FRAMEWORK_PERMISSION.AllowAny'
+        'rest_framework.permissions.AllowAny'
     ),
-    'DEFAULT_AUTHENTICATION_CLASES': (
+    
+     'DEFAULT_AUTHENTICATION_CLASES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
+    
 }
 
 ROOT_URLCONF = 'ProyectCovid19.urls'

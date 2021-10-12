@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.http import HttpResponse
+from AppCovid19.views.CRUDView import consultar_registros_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('consultar-registros/', consultar_registros_view, name='consultar'),
 ]

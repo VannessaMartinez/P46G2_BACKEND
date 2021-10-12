@@ -9,7 +9,7 @@ class SeguimientoCambiosSerializer(serializers.ModelSerializer):
     
     def to_representation(self, obj):
         seguimiento_cambios = Seguimiento_de_cambios.objects.get(id=obj.id_evolucion)
-        registro = Registro.objects.get(id=obj.id_caso)
+        registro = Registro.objects.get(id=obj.id_del_caso_fk_id)
         return {
             'id_evolucion'            : seguimiento_cambios.id_evolucion,
             'id_del_caso_fk'          : registro.id_caso,
