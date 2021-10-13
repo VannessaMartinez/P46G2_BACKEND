@@ -10,12 +10,12 @@ class RegistroSerializer(serializers.ModelSerializer):
         'edad', 'unidad_de_medida_edad', 'sexo', 'grupo_etnico', 'pertenencia_etnica', 'fecha_recuperacion', 'tipo_recuperacion']           
     
     def to_representation(self, obj):
-        seguimiento_cambios = Seguimiento_de_cambios.objects.get(id_evolucion=obj.id_evolucion)
+        
         ubicacion = Ubicacion.objects.get(codigoDivipolaMunicipio=obj.codigoDivipolaMunicipio_fk_id)
         registro = Registro.objects.get(id_caso=obj.id_caso)
         return {
             'id_caso'                           :registro.id_caso,
-            'codigo_divipola_municipio_fk'      :registro.codigo_divipola_municipio_fk,
+            'codigo_divipola_municipio_fk'      :ubicacion.codigo_divipola_municipio_fk,
             'fecha_notificacion'                :registro.fecha_notificacion,
             'fecha_reporte'                     :registro.fecha_reporte,
             'fecha_sintomas'                    :registro.fecha_sintomas,
