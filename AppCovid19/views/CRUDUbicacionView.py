@@ -47,3 +47,13 @@ class ActualizarUbicacion(generics.UpdateAPIView):                              
 
     def update(self, request, *args, **kwargs):     
         return super().update(request, *args, **kwargs)                            #con esta línea se actualiza el registro
+
+class CrearRegistro(generics.CreateAPIView):    
+    serializer_class   = RegistroSerializer
+
+    def post(self, request, *args, **kwargs):                                      
+        serializer = RegistroSerializer(data=request.data)                        
+        serializer.is_valid(raise_exception=True)                                
+        serializer.save()                                                         
+
+        return Response("Transacción exitosa", status=status.HTTP_201_CREATED) 

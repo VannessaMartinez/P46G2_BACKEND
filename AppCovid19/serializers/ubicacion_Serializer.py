@@ -16,6 +16,4 @@ class UbicacionSerializer(serializers.ModelSerializer):
             'nombre_departamento'           : ubicacion.nombre_departamento,
             'nombre_municipio'              : ubicacion.nombre_municipio,
         }
-
-
     

@@ -27,20 +27,4 @@ class RegistroSerializer(serializers.ModelSerializer):
             'pertenencia_etnica'                :registro.pertenencia_etnica,
             'fecha_recuperacion'                :registro.fecha_recuperacion,
             'tipo_recuperacion'                 :registro.tipo_recuperacion,
-            'ubicacion'                         :{
-                'codigoDivipolaMunicipio'           : ubicacion.codigoDivipolaMunicipio,
-                'codigo_iso_pais'                   : ubicacion.codigo_iso_pais,
-                'nombre_pais'                       : ubicacion.nombre_pais,
-                'codigo_divipola_departamento'      : ubicacion.codigo_divipola_departamento,
-                'nombre_departamento'               : ubicacion.nombre_departamento,
-                'nombre_municipio'                  : ubicacion.nombre_municipio,
-            },
-            'seguimiento'                       :{
-                'id_evolucion'                      : seguimiento_cambios.id_evolucion,
-                'ubicacion_caso'                    : seguimiento_cambios.ubicacion_caso,
-                'estado'                            : seguimiento_cambios.estado,
-                'tipo_contagio'                     : seguimiento_cambios.tipo_contagio,
-                'recuperado'                        : seguimiento_cambios.recuperado, 
-                'fecha_muerte'                      : seguimiento_cambios.fecha_muerte,
-            }
         }
