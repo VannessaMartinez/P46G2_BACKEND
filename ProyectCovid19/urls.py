@@ -23,6 +23,14 @@ from AppCovid19.views.CRUDUbicacionView import CrearUbicacion
 from AppCovid19.views.CRUDUbicacionView import ActualizarUbicacion
 from AppCovid19.views.agregarRegistrosView import CrearRegistro
 from AppCovid19.views.visualizarRegistros import MostarRegistros
+from AppCovid19.views.ActualizarSeguimientoView import CrearSeguimiento
+from AppCovid19.views.ActualizarSeguimientoView import ConsultarUnSeguimiento
+from AppCovid19.views.ActualizarSeguimientoView import MostrarTodosSeguimientos
+from AppCovid19.views.ActualizarSeguimientoView import ActualizarSeguimiento
+
+
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('consultarUnaUbicacion/<int:codigo_mun>/', UnRegistroidUbicacion.as_view()),
@@ -30,5 +38,12 @@ urlpatterns = [
     path('crearUbicacion/', CrearUbicacion.as_view()),
     path('modificarUbicacion/<int:pk>/', ActualizarUbicacion.as_view()),
     path('crearRegistro/', CrearRegistro.as_view()),
-    path('mostrarRegistros/', MostarRegistros.as_view())
+    path('mostrarRegistros/', MostarRegistros.as_view()),
+
+    path('CrearSeguimiento/', CrearSeguimiento.as_view()),
+    path('ConsultarUnSeguimiento/<int:pk>/', ConsultarUnSeguimiento.as_view()),
+    path('MostrarTodosSeguimientos/', MostrarTodosSeguimientos.as_view()),
+    path('actualizarSeguimiento/<int:pk>/', ActualizarSeguimiento.as_view()),
+
+
 ]
