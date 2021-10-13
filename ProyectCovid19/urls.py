@@ -21,11 +21,14 @@ from AppCovid19.views.CRUDUbicacionView import UnRegistroidUbicacion
 from AppCovid19.views.CRUDUbicacionView import MostarTodasUbicaciones
 from AppCovid19.views.CRUDUbicacionView import CrearUbicacion
 from AppCovid19.views.CRUDUbicacionView import ActualizarUbicacion
+from AppCovid19.views.agregarRegistrosView import CrearRegistro
+from AppCovid19.views.visualizarRegistros import MostarRegistros
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('consultarUnaUbicacion/<int:codigo_mun>/', UnRegistroidUbicacion.as_view()),
     path('consultarTodasUbicaciones/', MostarTodasUbicaciones.as_view()),
     path('crearUbicacion/', CrearUbicacion.as_view()),
     path('modificarUbicacion/<int:pk>/', ActualizarUbicacion.as_view()),
-    
+    path('crearRegistro/', CrearRegistro.as_view()),
+    path('mostrarRegistros/', MostarRegistros.as_view())
 ]

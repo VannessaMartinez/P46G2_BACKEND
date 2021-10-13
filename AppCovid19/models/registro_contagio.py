@@ -1,10 +1,12 @@
 from django.db import models
 from .ubicacion import Ubicacion
+from .seguimiento_de_cambios import Seguimiento_de_cambios
 
 
 class Registro(models.Model):
     id_caso                        = models.AutoField(primary_key=True)
     codigo_divipola_municipio_fk   = models.ForeignKey(Ubicacion, null=False, blank=False,  on_delete=models.CASCADE)
+    id_evolucion_fk                = models.ForeignKey(Seguimiento_de_cambios, null=False, blank=False, on_delete=models.CASCADE)
     fecha_notificacion             = models.DateField()
     fecha_reporte                  = models.DateField()
     fecha_sintomas                 = models.DateField()
@@ -16,5 +18,6 @@ class Registro(models.Model):
     pertenencia_etnica             = models.IntegerField('Pertenencia_etnica')   #modificar frontend
     fecha_recuperacion             = models.DateField()
     tipo_recuperacion              = models.CharField('Tipo_de_recuperacion', max_length=20)
+
 
 
