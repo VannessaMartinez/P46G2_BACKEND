@@ -28,7 +28,7 @@ class RegistroSerializer(serializers.ModelSerializer):
             'pertenencia_etnica'                :registro.pertenencia_etnica,
             'fecha_recuperacion'                :registro.fecha_recuperacion,
             'tipo_recuperacion'                 :registro.tipo_recuperacion,
-            
+
             'ubicacion'                         : {
                 'codigo_iso_pais'               : ubicacion.codigo_iso_pais,
                 'nombre_pais'                   : ubicacion.nombre_pais,
