@@ -1,5 +1,4 @@
 from AppCovid19.models.seguimiento_de_cambios import Seguimiento_de_cambios
-from AppCovid19.models.registro_contagio      import Registro
 from rest_framework                           import serializers
 
 class SeguimientoCambiosSerializer(serializers.ModelSerializer):

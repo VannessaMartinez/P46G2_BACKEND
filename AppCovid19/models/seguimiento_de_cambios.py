@@ -1,4 +1,5 @@
 from django.db import models
+
 class Seguimiento_de_cambios(models.Model):
     id_evolucion    = models.IntegerField(primary_key=True)
     ubicacion_caso  = models.CharField('Ubicacion_caso', max_length=30)

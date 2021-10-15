@@ -1,11 +1,7 @@
-from AppCovid19.models import ubicacion
 from AppCovid19.models.registro_contagio      import Registro
 from AppCovid19.models.ubicacion              import Ubicacion
 from AppCovid19.models.seguimiento_de_cambios import Seguimiento_de_cambios
 from rest_framework                           import serializers
-from AppCovid19.serializers.ubicacion_Serializer import UbicacionSerializer
-from AppCovid19.serializers.seguimiento_Serializer import SeguimientoCambiosSerializer
-
 
 class RegistroSerializer(serializers.ModelSerializer):
     
@@ -33,6 +29,7 @@ class RegistroSerializer(serializers.ModelSerializer):
             'pertenencia_etnica'                :registro.pertenencia_etnica,
             'fecha_recuperacion'                :registro.fecha_recuperacion,
             'tipo_recuperacion'                 :registro.tipo_recuperacion,
+            
             'ubicacion'                         : {
                 'codigo_iso_pais'               : ubicacion.codigo_iso_pais,
                 'nombre_pais'                   : ubicacion.nombre_pais,
