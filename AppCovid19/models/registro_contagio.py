@@ -1,12 +1,9 @@
 from django.db import models
-from django.db.models.fields.related import OneToOneField #si se usa
 from .ubicacion import Ubicacion
-from .seguimiento_de_cambios import Seguimiento_de_cambios
 
 class Registro(models.Model):
-    id_caso                        = models.AutoField(primary_key=True)
+    id_caso                        = models.IntegerField(primary_key=True)
     codigo_divipola_municipio_fk   = models.ForeignKey(Ubicacion, null=False, blank=False, on_delete=models.CASCADE)
-    id_evolucion_fk                = models.OneToOneField(Seguimiento_de_cambios, null=False, on_delete=models.CASCADE)
     fecha_notificacion             = models.DateField()
     fecha_reporte                  = models.DateField()
     fecha_sintomas                 = models.DateField()

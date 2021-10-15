@@ -3,21 +3,20 @@ from AppCovid19.models.ubicacion              import Ubicacion
 from AppCovid19.models.seguimiento_de_cambios import Seguimiento_de_cambios
 from rest_framework                           import serializers
 
+
 class RegistroSerializer(serializers.ModelSerializer):
-    
     class Meta:
         model = Registro
-        fields = ['id_caso', 'codigo_divipola_municipio_fk', 'id_evolucion_fk' , 'fecha_notificacion', 'fecha_reporte', 'fecha_sintomas', 'fecha_diagnostico_lab',
+        fields = ['id_caso', 'codigo_divipola_municipio_fk', 'fecha_notificacion', 'fecha_reporte', 'fecha_sintomas', 'fecha_diagnostico_lab',
         'edad', 'unidad_de_medida_edad', 'sexo', 'grupo_etnico', 'pertenencia_etnica', 'fecha_recuperacion', 'tipo_recuperacion']
 
     def to_representation(self, obj):
         ubicacion           = Ubicacion.objects.get(codigoDivipolaMunicipio=obj.codigo_divipola_municipio_fk_id)
         registro            = Registro.objects.get(id_caso=obj.id_caso)
-        seguimiento_cambios = Seguimiento_de_cambios.objects.get(id_evolucion=obj.id_evolucion_fk_id)
+        seguimiento_cambios = Seguimiento_de_cambios.objects.get(id_caso_fk=obj.id_caso)
         return {
             'id_caso'                           :registro.id_caso,
             'codigo_divipola_municipio_fk'      :ubicacion.codigoDivipolaMunicipio,
-            'id_evolucion_fk'                      :seguimiento_cambios.id_evolucion,
             'fecha_notificacion'                :registro.fecha_notificacion,
             'fecha_reporte'                     :registro.fecha_reporte,
             'fecha_sintomas'                    :registro.fecha_sintomas,
@@ -38,8 +37,9 @@ class RegistroSerializer(serializers.ModelSerializer):
                 'nombre_municipio'              : ubicacion.nombre_municipio
             },
             'seguimiento'                       : {
+                'id_evolucion'                  : seguimiento_cambios.id_evolucion,
                 'ubicacion_caso'                : seguimiento_cambios.ubicacion_caso,
-                'estado '                       : seguimiento_cambios.estado,
+                'estado'                        : seguimiento_cambios.estado,
                 'tipo_contagio'                 : seguimiento_cambios.tipo_contagio,
                 'recuperado'                    : seguimiento_cambios.recuperado,
                 'fecha_muerte'                  : seguimiento_cambios.fecha_muerte,
