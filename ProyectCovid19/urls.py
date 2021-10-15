@@ -16,13 +16,36 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.http import HttpResponse
-from AppCovid19.views.CRUDView import consultar_registros_view
-from AppCovid19.views.CRUDView import UnRegistroidUbicacion
-from AppCovid19.views.CRUDView import MostarTodasUbicaciones
-from AppCovid19.views.CRUDView import CrearUbicacion
+from AppCovid19.views.CRUDUbicacionView import consultar_registros_view
+from AppCovid19.views.CRUDUbicacionView import UnRegistroidUbicacion
+from AppCovid19.views.CRUDUbicacionView import MostarTodasUbicaciones
+from AppCovid19.views.CRUDUbicacionView import CrearUbicacion
+from AppCovid19.views.CRUDUbicacionView import ActualizarUbicacion
+from AppCovid19.views.agregarRegistrosView import CrearRegistro
+from AppCovid19.views.visualizarRegistros import MostarRegistros
+from AppCovid19.views.ActualizarSeguimientoView import CrearSeguimiento
+from AppCovid19.views.ActualizarSeguimientoView import ConsultarUnSeguimiento
+from AppCovid19.views.ActualizarSeguimientoView import MostrarTodosSeguimientos
+from AppCovid19.views.ActualizarSeguimientoView import ActualizarSeguimiento
+from AppCovid19.views.filtrarRegistrosView      import FiltrarSexo, FiltrarEstado, FiltrarMunicipio
+
+
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('consultarUnaUbicacion/<int:codigo_mun>/', UnRegistroidUbicacion.as_view()),
     path('consultarTodasUbicaciones/', MostarTodasUbicaciones.as_view()),
     path('crearUbicacion/', CrearUbicacion.as_view()),
+    path('modificarUbicacion/<int:pk>/', ActualizarUbicacion.as_view()),
+    path('crearRegistro/', CrearRegistro.as_view()),
+    path('mostrarRegistros/', MostarRegistros.as_view()),
+
+    path('CrearSeguimiento/', CrearSeguimiento.as_view()),
+    path('ConsultarUnSeguimiento/<int:pk>/', ConsultarUnSeguimiento.as_view()),
+    path('MostrarTodosSeguimientos/', MostrarTodosSeguimientos.as_view()),
+    path('actualizarSeguimiento/<int:pk>/', ActualizarSeguimiento.as_view()),
+    path('filtrarSexo/<sexo>/', FiltrarSexo.as_view()),
+    path('filtrarEstado/<estado>/', FiltrarEstado.as_view()),
+    path('filtrarMunicipio/<int:codigoDivipolaMunicipio>/', FiltrarMunicipio.as_view()),
 ]

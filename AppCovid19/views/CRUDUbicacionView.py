@@ -1,7 +1,7 @@
-from django.conf                                      import settings
-from rest_framework                                   import generics, status
-from rest_framework.response                          import Response
-from django.http import HttpResponse
+from django.conf                import settings
+from rest_framework             import generics, status
+from rest_framework.response    import Response
+from django.http                import HttpResponse
 
 from AppCovid19.models.registro_contagio      import Registro
 from AppCovid19.models.ubicacion              import Ubicacion
@@ -25,7 +25,6 @@ class UnRegistroidUbicacion(generics.ListAPIView):
 
 class MostarTodasUbicaciones(generics.ListAPIView):
     serializer_class   = UbicacionSerializer
-     
 
     def get_queryset(self):
         queryset = Ubicacion.objects.all()     #De todas las transacciones, filtra aquellas con cuenta origen = "account" que viene en la url
@@ -40,3 +39,10 @@ class CrearUbicacion(generics.CreateAPIView):    #Crear un registro
         serializer.save()                                                          #guarda al transacción en la bd
 
         return Response("Transacción exitosa", status=status.HTTP_201_CREATED)     #devuelve msj de transacción exitosa
+
+class ActualizarUbicacion(generics.UpdateAPIView):                                 #Actualizar un registro
+    serializer_class   = UbicacionSerializer
+    queryset           = Ubicacion.objects.all()
+
+    def update(self, request, *args, **kwargs):
+        return super().update(request, *args, **kwargs)                            #con esta línea se actualiza el registro
