@@ -3,7 +3,6 @@ from rest_framework                                   import generics, status
 from rest_framework.response                          import Response
 from django.http import HttpResponse
 
-
 from AppCovid19.models.seguimiento_de_cambios         import Seguimiento_de_cambios
 from AppCovid19.serializers.seguimiento_Serializer    import SeguimientoCambiosSerializer
 

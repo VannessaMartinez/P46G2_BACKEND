@@ -102,9 +102,9 @@ WSGI_APPLICATION = 'ProyectCovid19.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE'    : 'django.db.backends.postgresql_psycopg2',
-        'NAME'      : 'coronactual',
+        'NAME'      : 'coronaunique',
         'USER'      : 'postgres',
-        #'PASSWORD'  : 'ADMIN1234',
+        #'PASSWORD'  : '123456',
         'PASSWORD'  : 'toor12345',
         'HOST'      : 'localhost',
         'PORT'      : '5432',
