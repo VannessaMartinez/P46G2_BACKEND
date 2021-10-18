@@ -3,6 +3,8 @@ Django
 djangorestframework
 djangorestframework-simplejwt
 psycopg2-binary
-django-cors-headers
+
+# Production
 gunicorn
 django-heroku
+django-cors-headers
