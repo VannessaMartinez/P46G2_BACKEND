@@ -29,10 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 CORS_ALLOW_ALL_ORIGINS = True
-# Para settings de producción (borrar CORS_ALLOW_ALL_ORIGINS = True):
-#CORS_ALLOWED_ORIGINS = {
-#    '' (escribir URL del frontend en Heroku)
-#}
+
 
 # Application definition
 
@@ -67,18 +64,18 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CordsMiddleware',
 ]
 
 #REST_FRAMEWORK = {
 #    'DEFAULT_PERMISSION_CLASSES': (
 #        'rest_framework.permissions.AllowAny'
 #   ),
-    
+
     # 'DEFAULT_AUTHENTICATION_CLASES': (
     #    'rest_framework_simplejwt.authentication.JWTAuthentication',
     #)
-    
+
 #}
 
 ROOT_URLCONF = 'ProyectCovid19.urls'
