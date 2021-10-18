@@ -28,6 +28,7 @@ SECRET_KEY = 'django-insecure-5^8$)em@pkz&uo(dj@p*6u(o&g&d6oyw^p92meqj0n2lp$3bj$
 DEBUG = True
 
 ALLOWED_HOSTS = []
+CORS_ALLOW_ALL_ORIGINS = True
 
 
 # Application definition
@@ -40,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'AppCovid19',
-    'rest_framework'
+    'rest_framework',
+    'corsheaders',
 ]
 
 SIMPLE_JWT = {
@@ -62,6 +64,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CordsMiddleware',
 ]
 
 #REST_FRAMEWORK = {
