@@ -42,8 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'AppCovid19',
-    'rest_framework'
-    'corsheaders'
+    'rest_framework',
+    'corsheaders',
 ]
 
 SIMPLE_JWT = {
