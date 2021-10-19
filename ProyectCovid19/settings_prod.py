@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-5^8$)em@pkz&uo(dj@p*6u(o&g&d6oyw^p92meqj0n2lp$3bj$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -102,11 +102,10 @@ WSGI_APPLICATION = 'ProyectCovid19.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE'    : 'django.db.backends.postgresql_psycopg2',
-        'NAME'      : 'coronaunique',
-        'USER'      : 'postgres',
-        'PASSWORD'  : '123456',
-        #'PASSWORD'  : 'toor12345',
-        'HOST'      : 'localhost',
+        'NAME'      : 'dqr24ph4hb155',
+        'USER'      : 'sjwipogbpdkvrb',
+        'PASSWORD'  : 'f016308954436fd486a7ffeb3d5c8a639909fb5468488b357b975d698ddbcb22',
+        'HOST'      : 'ec2-52-200-68-5.compute-1.amazonaws.com',
         'PORT'      : '5432',
     }
 }
@@ -154,3 +153,4 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+django_heroku.settings(locals())
