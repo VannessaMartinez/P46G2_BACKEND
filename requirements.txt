@@ -5,6 +5,7 @@ djangorestframework-simplejwt
 psycopg2-binary
 
 # Production
+
 gunicorn
 django-heroku
 django-cors-headers
