@@ -11,8 +11,7 @@ class UbicacionSerializer(serializers.ModelSerializer):
     def to_representation(self, obj):
         ubicacion           = Ubicacion.objects.get(codigoDivipolaMunicipio=obj.codigoDivipolaMunicipio)
         registro            = Registro.objects.get(codigo_divipola_municipio_fk=obj.codigoDivipolaMunicipio)
-        seguimiento_cambios = Seguimiento_de_cambios.objects.get(id_caso_fk=obj.codigoDivipolaMunicipio)
-
+        seguimiento_cambios = Seguimiento_de_cambios.objects.get(id_caso_fk=registro.id_caso)
         return {
             'codigoDivipolaMunicipio'       : ubicacion.codigoDivipolaMunicipio,
             'codigo_iso_pais'               : ubicacion.codigo_iso_pais,
