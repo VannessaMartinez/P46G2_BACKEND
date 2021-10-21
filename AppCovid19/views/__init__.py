@@ -3,3 +3,5 @@ from .CRUDUbicacionView import UnRegistroidUbicacion, MostarTodasUbicaciones, Cr
 from .visualizarRegistros import MostarRegistros
 from .ActualizarSeguimientoView import ActualizarSeguimiento
 from .filtrarRegistrosView import FiltrarSexo, FiltrarEstado, FiltrarMunicipio
+
+from .visualizarRegistros import Ubi
