@@ -3,7 +3,6 @@ from AppCovid19.models.ubicacion              import Ubicacion
 from AppCovid19.models.seguimiento_de_cambios import Seguimiento_de_cambios
 from rest_framework                           import serializers
 
-
 class RegistroSerializer(serializers.ModelSerializer):
     class Meta:
         model = Registro
