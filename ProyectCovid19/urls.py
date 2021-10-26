@@ -29,6 +29,8 @@ from AppCovid19.views.filtrarRegistrosView      import FiltrarSexo, FiltrarEstad
 
 from AppCovid19.views.regSegView                import RegSegView
 
+from AppCovid19.views.contar import Contar
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     
@@ -49,5 +51,6 @@ urlpatterns = [
     path('FiltrarMunicipio/<int:codigoDivipolaMunicipio>/', FiltrarMunicipio.as_view()),
 
     path('CrearRegSeg/', RegSegView.as_view()),
+    path('Contar/', Contar.as_view()),
    
 ]
