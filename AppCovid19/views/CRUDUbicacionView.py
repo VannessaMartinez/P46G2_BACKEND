@@ -4,20 +4,21 @@ from rest_framework.response                        import Response
 from django.http                                    import HttpResponse
 from AppCovid19.models.ubicacion                    import Ubicacion
 from AppCovid19.serializers.ubicacion_Serializer    import UbicacionSerializer
+from AppCovid19.serializers.ubiSerializer           import UbiSerializer
 
 def consultar_registros_view(request):
     message = 'Aca van los registros!'
     return HttpResponse (message)
 
 class UnRegistroidUbicacion(generics.ListAPIView):
-    serializer_class   = UbicacionSerializer
+    serializer_class   = UbiSerializer
      
     def get_queryset(self):
         queryset = Ubicacion.objects.filter(codigoDivipolaMunicipio=self.kwargs['codigo_mun'])     #De todas las transacciones, filtra aquellas con cuenta origen = "account" que viene en la url
         return queryset
 
 class MostarTodasUbicaciones(generics.ListAPIView):
-    serializer_class   = UbicacionSerializer
+    serializer_class   = UbiSerializer
 
     def get_queryset(self):
         queryset = Ubicacion.objects.all()     #De todas las transacciones, filtra aquellas con cuenta origen = "account" que viene en la url

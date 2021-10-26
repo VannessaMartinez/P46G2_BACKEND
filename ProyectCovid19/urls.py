@@ -27,6 +27,8 @@ from AppCovid19.views.ActualizarSeguimientoView import ConsultarUnSeguimiento
 from AppCovid19.views.ActualizarSeguimientoView import ActualizarSeguimiento
 from AppCovid19.views.filtrarRegistrosView      import FiltrarSexo, FiltrarEstado, FiltrarMunicipio
 
+from AppCovid19.views.regSegView                import RegSegView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     
@@ -45,5 +47,7 @@ urlpatterns = [
     path('FiltrarSexo/<sexo>/', FiltrarSexo.as_view()),
     path('FiltrarEstado/<estado>/', FiltrarEstado.as_view()),
     path('FiltrarMunicipio/<int:codigoDivipolaMunicipio>/', FiltrarMunicipio.as_view()),
+
+    path('CrearRegSeg/', RegSegView.as_view()),
    
 ]
