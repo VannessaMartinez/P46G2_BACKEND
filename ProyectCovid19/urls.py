@@ -31,6 +31,8 @@ from AppCovid19.views.regSegView                import RegSegView
 
 from AppCovid19.views.contar import Contar
 
+from AppCovid19.views.regSoloView import RegSolo
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     
@@ -52,5 +54,6 @@ urlpatterns = [
 
     path('CrearRegSeg/', RegSegView.as_view()),
     path('Contar/', Contar.as_view()),
+    path('UltimoRegistro/', RegSolo.as_view()),
    
 ]

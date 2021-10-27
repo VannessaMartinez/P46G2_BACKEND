@@ -9,8 +9,8 @@ from rest_framework                                      import generics, status
 
 class Contar(generics.ListAPIView):
     serializer_class   = RegistroSerializer
-    def get_queryset(self):
+    def get(self, request, *args, **kwargs):
         queryset = Registro.objects.all()
         numero = len(queryset)
-        num = str(numero)    
-        return Response(num,status=status.HTTP_200_OK)
+        return Response({'cantidad registros': numero},status = status.HTTP_200_OK)
+                            

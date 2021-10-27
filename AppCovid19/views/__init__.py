@@ -4,3 +4,4 @@ from .visualizarRegistros import MostarRegistros
 from .ActualizarSeguimientoView import ActualizarSeguimiento
 from .filtrarRegistrosView import FiltrarSexo, FiltrarEstado, FiltrarMunicipio
 from .contar import Contar
+from .regSoloView import RegSolo
