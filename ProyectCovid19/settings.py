@@ -64,16 +64,17 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-#REST_FRAMEWORK = {
-#    'DEFAULT_PERMISSION_CLASSES': (
-#        'rest_framework.permissions.AllowAny'
-#   ),
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.AllowAny'
+    ),
     
-    # 'DEFAULT_AUTHENTICATION_CLASES': (
-    #    'rest_framework_simplejwt.authentication.JWTAuthentication',
-    #)
-    
-#}
+     'DEFAULT_AUTHENTICATION_CLASES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
+
+AUTH_USER_MODEL = 'AppCovid19.User'
 
 ROOT_URLCONF = 'ProyectCovid19.urls'
 
