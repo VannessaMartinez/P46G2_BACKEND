@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'AppCovid19',
-    'rest_framework'
+    'rest_framework',
 ]
 
 SIMPLE_JWT = {
@@ -51,7 +51,7 @@ SIMPLE_JWT = {
     'UPDATE_LAST_LOGIN'         : False,
     'ALGORITHM'                 : 'HS256',
     'USER_ID_FIELD'             : 'id',
-    'USER_ID_CLAIM'             : 'user_id'
+    'USER_ID_CLAIM'             : 'user_id',
 }
 
 MIDDLEWARE = [

@@ -49,8 +49,8 @@ class UserManager(BaseUserManager):
 class User(AbstractBaseUser, PermissionsMixin):
 
     id        = models.BigAutoField(primary_key=True)
-    username  = models.CharField(max_length = 255, unique = True)
-    name      = models.CharField('Nombres', max_length = 255, blank = True, null = True)
+    username  = models.CharField('Username',max_length = 255, unique = True)
+    password  = models.CharField('Password', max_length = 256)
     is_staff  = models.BooleanField(default = True)
     is_admin  = models.BooleanField(default= True)
     is_active = models.BooleanField(default = True)
@@ -62,8 +62,4 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     objects = UserManager()
     
-    class Meta:
-        verbose_name = 'Usuario'
-        verbose_name_plural = 'Usuarios'
-
     USERNAME_FIELD = 'username' 
