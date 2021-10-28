@@ -15,23 +15,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from AppCovid19.views.CRUDUbicacionView import consultar_registros_view
-from AppCovid19.views.CRUDUbicacionView import UnRegistroidUbicacion
-from AppCovid19.views.CRUDUbicacionView import MostarTodasUbicaciones
-from AppCovid19.views.CRUDUbicacionView import CrearUbicacion
-from AppCovid19.views.CRUDUbicacionView import ActualizarUbicacion
-from AppCovid19.views.agregarRegistrosView import CrearRegistro
-from AppCovid19.views.visualizarRegistros import MostarRegistros
+from AppCovid19.views.CRUDUbicacionView         import consultar_registros_view
+from AppCovid19.views.CRUDUbicacionView         import UnRegistroidUbicacion
+from AppCovid19.views.CRUDUbicacionView         import MostarTodasUbicaciones
+from AppCovid19.views.CRUDUbicacionView         import CrearUbicacion
+from AppCovid19.views.CRUDUbicacionView         import ActualizarUbicacion
+from AppCovid19.views.agregarRegistrosView      import CrearRegistro
+from AppCovid19.views.visualizarRegistros       import MostarRegistros
 from AppCovid19.views.ActualizarSeguimientoView import CrearSeguimiento
 from AppCovid19.views.ActualizarSeguimientoView import ConsultarUnSeguimiento
 from AppCovid19.views.ActualizarSeguimientoView import ActualizarSeguimiento
 from AppCovid19.views.filtrarRegistrosView      import FiltrarSexo, FiltrarEstado, FiltrarMunicipio
-
 from AppCovid19.views.regSegView                import RegSegView
+from AppCovid19.views.contar                    import Contar
+from AppCovid19.views.regSoloView               import RegSolo
+from AppCovid19.views.userCreateView            import UserCreate
 
-from AppCovid19.views.contar import Contar
 
-from AppCovid19.views.regSoloView import RegSolo
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -52,8 +52,10 @@ urlpatterns = [
     path('FiltrarEstado/<estado>/', FiltrarEstado.as_view()),
     path('FiltrarMunicipio/<int:codigoDivipolaMunicipio>/', FiltrarMunicipio.as_view()),
 
-    path('CrearRegSeg/', RegSegView.as_view()),
+    #path('CrearRegSeg/', RegSegView.as_view()),
     path('Contar/', Contar.as_view()),
     path('UltimoRegistro/', RegSolo.as_view()),
+    
+    path('CrearUsuario/', UserCreate.as_view()),
    
 ]

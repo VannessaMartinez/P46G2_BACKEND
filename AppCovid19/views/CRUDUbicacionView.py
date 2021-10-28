@@ -6,6 +6,8 @@ from AppCovid19.models.ubicacion                    import Ubicacion
 from AppCovid19.serializers.ubicacion_Serializer    import UbicacionSerializer
 from AppCovid19.serializers.ubiSerializer           import UbiSerializer
 
+from rest_framework.permissions                   import IsAuthenticated
+
 def consultar_registros_view(request):
     message = 'Aca van los registros!'
     return HttpResponse (message)
@@ -26,6 +28,7 @@ class MostarTodasUbicaciones(generics.ListAPIView):
 
 class CrearUbicacion(generics.CreateAPIView):    #Crear un registro
     serializer_class   = UbicacionSerializer
+    permission_classes = (IsAuthenticated,)
     def post(self, request, *args, **kwargs):                                      #request: viene en el body del post. Se obtiene info con request.data[nombre de la llave]
             
         serializer = UbicacionSerializer(data=request.data)                        #pasamos del json que recibimos al objeto de tipo transacción

@@ -3,3 +3,4 @@ from AppCovid19.serializers.seguimiento_Serializer          import SeguimientoCa
 from AppCovid19.serializers.ubicacion_Serializer            import UbicacionSerializer
 from AppCovid19.serializers.ubiSerializer                   import UbiSerializer
 from AppCovid19.serializers.regSoloSerializer               import RegSoloSerializer
+from AppCovid19.serializers.userSerializer                  import UserSerializer
