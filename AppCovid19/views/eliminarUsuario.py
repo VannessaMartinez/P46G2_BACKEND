@@ -5,9 +5,7 @@ from AppCovid19.serializers.userSerializer            import UserSerializer
 from AppCovid19.models.user                           import User
 
 class EliminarUsuario(generics.DestroyAPIView):
-    serializer_class   = UserSerializer
-    #permission_classes = (IsAuthenticated,)
-    
+    serializer_class   = UserSerializer   
 
     def delete(self, request, *args, **kwargs):
 

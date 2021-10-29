@@ -1,4 +1,4 @@
-from django.db import models
+from django.db          import models
 from .registro_contagio import Registro
 
 class Seguimiento_de_cambios(models.Model):

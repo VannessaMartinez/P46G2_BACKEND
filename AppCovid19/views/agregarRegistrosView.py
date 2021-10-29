@@ -1,8 +1,7 @@
-from django.conf                                      import settings
-from rest_framework                                   import generics, status
-from rest_framework.response                          import Response
-
-from AppCovid19.serializers.registroContagio_Serializer import RegistroSerializer
+from django.conf                                         import settings
+from rest_framework                                      import generics, status
+from rest_framework.response                             import Response
+from AppCovid19.serializers.registroContagio_Serializer  import RegistroSerializer
 
 class CrearRegistro(generics.CreateAPIView):
     serializer_class = RegistroSerializer

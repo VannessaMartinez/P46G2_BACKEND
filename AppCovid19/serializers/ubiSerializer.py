@@ -1,7 +1,5 @@
 from AppCovid19.models import Ubicacion
 from rest_framework    import serializers
-from AppCovid19.models import Registro
-from AppCovid19.models import Seguimiento_de_cambios
 
 class UbiSerializer(serializers.ModelSerializer):
     class Meta:

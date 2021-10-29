@@ -1,5 +1,5 @@
-from django.db import models
-from .ubicacion import Ubicacion
+from django.db      import models
+from .ubicacion     import Ubicacion
 
 class Registro(models.Model):
     id_caso                        = models.AutoField(primary_key=True,blank=True)
@@ -9,9 +9,9 @@ class Registro(models.Model):
     fecha_sintomas                 = models.DateField()
     fecha_diagnostico_lab          = models.DateField()
     edad                           = models.IntegerField()
-    unidad_de_medida_edad          = models.IntegerField()                                      #modificar frontend
+    unidad_de_medida_edad          = models.IntegerField()                                   
     sexo                           = models.CharField(max_length=5)
     grupo_etnico                   = models.CharField(max_length=30)
-    pertenencia_etnica             = models.IntegerField()   #modificar frontend
+    pertenencia_etnica             = models.IntegerField()   
     fecha_recuperacion             = models.DateField()
     tipo_recuperacion              = models.CharField(max_length=20)

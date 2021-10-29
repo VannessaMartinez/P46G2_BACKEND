@@ -26,13 +26,12 @@ from AppCovid19.views.ActualizarSeguimientoView import CrearSeguimiento
 from AppCovid19.views.ActualizarSeguimientoView import ConsultarUnSeguimiento
 from AppCovid19.views.ActualizarSeguimientoView import ActualizarSeguimiento
 from AppCovid19.views.filtrarRegistrosView      import FiltrarSexo, FiltrarEstado, FiltrarMunicipio
-from AppCovid19.views.regSegView                import RegSegView
 from AppCovid19.views.contar                    import Contar
 from AppCovid19.views.regSoloView               import RegSolo
 from AppCovid19.views.userCreateView            import UserCreate
 from AppCovid19.views.eliminarUsuario           import EliminarUsuario
 
-from rest_framework_simplejwt.views import (TokenObtainPairView, TokenRefreshView)
+from rest_framework_simplejwt.views             import (TokenObtainPairView, TokenRefreshView)
 
 
 
@@ -40,9 +39,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     
     path('CrearUbicacion/', CrearUbicacion.as_view()),
-    path('ConsultarUnaUbicacion/<int:codigo_mun>/', UnRegistroidUbicacion.as_view()),
+    #path('ConsultarUnaUbicacion/<int:codigo_mun>/', UnRegistroidUbicacion.as_view()),
     path('ConsultarTodasUbicaciones/', MostarTodasUbicaciones.as_view()),
-    path('CodificarUbicacion/<int:pk>/', ActualizarUbicacion.as_view()),
+    #path('CbodificarUicacion/<int:pk>/', ActualizarUbicacion.as_view()),
 
     path('CrearSeguimiento/', CrearSeguimiento.as_view()),
     path('ActualizarSeguimiento/<int:pk>/', ActualizarSeguimiento.as_view()),
@@ -53,15 +52,14 @@ urlpatterns = [
 
     path('FiltrarSexo/<sexo>/', FiltrarSexo.as_view()),
     path('FiltrarEstado/<estado>/', FiltrarEstado.as_view()),
-    path('FiltrarMunicipio/<int:codigoDivipolaMunicipio>/', FiltrarMunicipio.as_view()),
-
-    #path('CrearRegSeg/', RegSegView.as_view()),
-    path('Contar/', Contar.as_view()),
+    #path('FiltrarMunicipio/<int:codigoDivipolaMunicipio>/', FiltrarMunicipio.as_view()),
+    
+    #path('Contar/', Contar.as_view()),
     path('UltimoRegistro/', RegSolo.as_view()),
     
     path('CrearUsuario/', UserCreate.as_view()),
     path('EliminarUsuario/', EliminarUsuario.as_view()),
-    path('login/',TokenObtainPairView.as_view()),
+    path('Login/',TokenObtainPairView.as_view()),
 
    
 ]
