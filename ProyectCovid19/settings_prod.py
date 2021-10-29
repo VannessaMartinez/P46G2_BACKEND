@@ -106,10 +106,10 @@ WSGI_APPLICATION = 'ProyectCovid19.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE'    : 'django.db.backends.postgresql_psycopg2',
-        'NAME'      : 'd9c8onjlhs7u5j',
-        'USER'      : 'akbxqrizlplzzs',
-        'PASSWORD'  : 'e84be7a25ff68f3ab3ca07b607f2494d1148dda879300522a4006a2ffe9578d4',
-        'HOST'      : 'ec2-44-199-83-229.compute-1.amazonaws.com',
+        'NAME'      : 'd8evmsv6fqvuba',
+        'USER'      : 'fzpvyibaorvyoo',
+        'PASSWORD'  : '5ca0e2e084ae3670767069d7ade3055abab98e1f187b6dd288c640cda6570b34',
+        'HOST'      : 'ec2-35-169-204-98.compute-1.amazonaws.com',
         'PORT'      : '5432',
     }
 }
