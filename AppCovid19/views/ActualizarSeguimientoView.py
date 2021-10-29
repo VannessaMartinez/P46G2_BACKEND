@@ -8,7 +8,8 @@ class CrearSeguimiento(generics.CreateAPIView):
     serializer_class   = SeguimientoCambiosSerializer
     def post(self, request, *args, **kwargs):                                      
             
-        serializer = SeguimientoCambiosSerializer(data=request.data)               
+        serializer = SeguimientoCambiosSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)                 
         serializer.save()                                                         
 
         return Response("Transacción exitosa", status=status.HTTP_201_CREATED)    
