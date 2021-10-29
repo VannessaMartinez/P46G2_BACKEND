@@ -47,7 +47,7 @@ INSTALLED_APPS = [
 ]
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME'     : timedelta(minutes=5),
+    'ACCESS_TOKEN_LIFETIME'     : timedelta(days=1),
     'REFRESH_TOKEN_LIFETIME'    : timedelta(days=1),
     'ROTATE_REFRESH_TOKENS'     : False,
     'BLACKLIST_AFTER_ROTATION'  : True,
@@ -68,16 +68,18 @@ MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
 ]
 
-#REST_FRAMEWORK = {
-#    'DEFAULT_PERMISSION_CLASSES': (
-#        'rest_framework.permissions.AllowAny'
-#   ),
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.AllowAny',
+   ),
     
-    # 'DEFAULT_AUTHENTICATION_CLASES': (
-    #    'rest_framework_simplejwt.authentication.JWTAuthentication',
-    #)
+     'DEFAULT_AUTHENTICATION_CLASES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
     
-#}
+}
+
+AUTH_USER_MODEL = 'AppCovid19.User'
 
 ROOT_URLCONF = 'ProyectCovid19.urls'
 
