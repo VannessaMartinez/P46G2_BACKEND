@@ -8,5 +8,5 @@ from rest_framework.response                             import Response
 class MostarRegistros(generics.ListAPIView):
     serializer_class   = RegistroSerializer
     def get_queryset(self):
-        queryset = Registro.objects.all()     #De todas las transacciones, filtra aquellas con cuenta origen = "account" que viene en la url
+        queryset = Registro.objects.all().order_by('id_caso')    
         return queryset

@@ -30,6 +30,9 @@ from AppCovid19.views.regSegView                import RegSegView
 from AppCovid19.views.contar                    import Contar
 from AppCovid19.views.regSoloView               import RegSolo
 from AppCovid19.views.userCreateView            import UserCreate
+from AppCovid19.views.eliminarUsuario           import EliminarUsuario
+
+from rest_framework_simplejwt.views import (TokenObtainPairView, TokenRefreshView)
 
 
 
@@ -57,5 +60,8 @@ urlpatterns = [
     path('UltimoRegistro/', RegSolo.as_view()),
     
     path('CrearUsuario/', UserCreate.as_view()),
+    path('EliminarUsuario/', EliminarUsuario.as_view()),
+    path('login/',TokenObtainPairView.as_view()),
+
    
 ]

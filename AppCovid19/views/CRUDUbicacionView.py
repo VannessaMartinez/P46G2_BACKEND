@@ -7,6 +7,7 @@ from AppCovid19.serializers.ubicacion_Serializer    import UbicacionSerializer
 from AppCovid19.serializers.ubiSerializer           import UbiSerializer
 
 from rest_framework.permissions                   import IsAuthenticated
+from rest_framework_simplejwt.backends            import TokenBackend
 
 def consultar_registros_view(request):
     message = 'Aca van los registros!'
@@ -26,11 +27,23 @@ class MostarTodasUbicaciones(generics.ListAPIView):
         queryset = Ubicacion.objects.all()     #De todas las transacciones, filtra aquellas con cuenta origen = "account" que viene en la url
         return queryset
 
-class CrearUbicacion(generics.CreateAPIView):    #Crear un registro
+class CrearUbicacion(generics.CreateAPIView):    #Crear una ubicacion
     serializer_class   = UbicacionSerializer
     permission_classes = (IsAuthenticated,)
-    def post(self, request, *args, **kwargs):                                      #request: viene en el body del post. Se obtiene info con request.data[nombre de la llave]
-            
+
+    def post(self, request, *args, **kwargs):                                     #request: viene en el body del post. Se obtiene info con request.data[nombre de la llave]
+        
+        token        = request.META.get('HTTP_AUTHORIZATION')[7:]
+        tokenBackend = TokenBackend(algorithm=settings.SIMPLE_JWT['ALGORITHM'])
+        print(token)
+        print(tokenBackend)
+        valid_data   = tokenBackend.decode(token,verify=False)
+        
+        if valid_data['username'] != kwargs['user']:
+            stringResponse = {'detail':'Unauthorized Request'}
+            return Response(stringResponse, status=status.HTTP_401_UNAUTHORIZED)
+        
+        
         serializer = UbicacionSerializer(data=request.data)                        #pasamos del json que recibimos al objeto de tipo transacción
         serializer.is_valid(raise_exception=True)                                  #verificar si es valido
         serializer.save()                                                          #guarda al transacción en la bd
