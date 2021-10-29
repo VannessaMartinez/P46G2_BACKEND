@@ -99,11 +99,11 @@ WSGI_APPLICATION = 'ProyectCovid19.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-'''
+
 DATABASES = {
     'default': {
         'ENGINE'    : 'django.db.backends.postgresql_psycopg2',
-        'NAME'      : 'jwt_3',
+        'NAME'      : 'jwt_3db2',
         'USER'      : 'postgres',
         'PASSWORD'  : '123456',
         #'PASSWORD'  : 'toor12345',
@@ -111,18 +111,6 @@ DATABASES = {
         'PORT'      : '5432',
     }
 }
-'''
-DATABASES = {
-    'default': {
-        'ENGINE'    : 'django.db.backends.postgresql_psycopg2',
-        'NAME'      : 'd8evmsv6fqvuba',
-        'USER'      : 'fzpvyibaorvyoo',
-        'PASSWORD'  : '5ca0e2e084ae3670767069d7ade3055abab98e1f187b6dd288c640cda6570b34',
-        'HOST'      : 'ec2-35-169-204-98.compute-1.amazonaws.com',
-        'PORT'      : '5432',
-    }
-}
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
